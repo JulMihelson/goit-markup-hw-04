@@ -49,6 +49,12 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 120px;
+}
 header {
   padding-top: 24px;
   padding-bottom: 24px;
@@ -98,6 +104,15 @@ header {
   line-height: 1.5;
   line-height: 24px;
   margin-top: 8px;
+}
+.body-text-medium {
+  color: var(--white-text);
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  line-height: 24px;
+  margin-top: 8px;
+  font-weight: 500;
 }
 .small-text {
   color: var(--text-slate);
@@ -194,20 +209,45 @@ header {
   color: var(--white-text);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
+
 .background-top {
-  background-color: var(--dark-navy-blue);
-  background-size: 100%;
+  background-image: linear-gradient(
+      to right,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office.jpg);
+  background-size: 1440px;
+  height: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   text-align: center;
   padding-top: 188px;
   padding-bottom: 188px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .background-footer {
+  display: flex;
+  align-items: baseline;
   background-color: var(--dark-navy-blue);
   padding-top: 100px;
   padding-bottom: 100px;
 }
 .background-our-team {
   background-color: var(--light-cloud);
+}
+.footer-text-medium {
+  color: var(--white-text);
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  line-height: 24px;
+  margin-top: 8px;
+  font-weight: 500;
+  padding-bottom: 16px;
 }
 .white-text {
   color: var(--accent-cornflower);
@@ -245,12 +285,12 @@ header {
   margin-top: 72px;
   gap: 24px;
 }
-.list-members:not(:nth-child(4n)) {
-  margin-right: 24px;
-}
+
 .activities {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .portfolio-cards {
@@ -259,8 +299,17 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   line-height: 8px;
-  column-gap: 24px;
+  column-gap: calc(100% - 2 * 24px) / 3;
   row-gap: 48px;
+}
+.portfolio-shadows {
+  box-sizing: border-box;
+}
+.portfolio-shadows:hover {
+  box-sizing: border-box;
+  border: 1px solid #f4f4fd;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .portfolio-cards-content {
   padding-left: 16px;
@@ -339,4 +388,84 @@ a {
 .bottom-border {
   border-bottom: solid 1px;
   border-bottom-color: var(--accent-cornflower);
+}
+
+.footer-logo-container {
+  display: flex;
+  align-items: baseline;
+}
+
+/* icon styles */
+.social-media-footer-icons {
+  fill: var(--white-text);
+}
+.footer-icons-button {
+  background-color: var(--text-slate);
+  border-radius: 99999px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+}
+
+.footer-icons-button:hover {
+  background-color: var(--success-green);
+  border-radius: 99999px;
+}
+
+.customer-icons {
+  width: 168px;
+  height: 88px;
+  padding: 16px 32px 16px 32px;
+  border: 1px solid var(--subtle-text-light-slate);
+  border-radius: 4px;
+  fill: var(--subtle-text-light-slate);
+}
+.customer-icons:hover {
+  fill: var(--pressed-state-ocean);
+  border: 1px solid var(--pressed-state-ocean);
+  border-radius: 4px;
+}
+.customer-icons-section {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding-top: 72px;
+  list-style: none;
+}
+
+.strong-sides-icons {
+  padding: 24px 100px 24px 100px;
+  background-color: var(--light-cloud);
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  margin-bottom: 8px;
+}
+.strong-sides {
+  justify-content: center;
+}
+.social-media-icons-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  gap: 24px;
+  margin-top: 8px;
+}
+.social-media-icons {
+  width: 16px;
+  height: 16px;
+  fill: var(--white-text);
+}
+.social-media-icons-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-brand-iris);
+  padding: 12px;
+}
+.social-media-icons-button:hover {
+  border-radius: 50%;
+  background-color: var(--pressed-state-ocean);
 }
